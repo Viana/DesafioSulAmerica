@@ -19,6 +19,7 @@ public class UtilidadesSelenium {
     static boolean highLight = true;
 
     public static String getTexto(By locator) throws InterruptedException, ConfigurationException, IOException {
+        scrollElement(locator);
         WebElement obj = getCurrentDriver().findElement(locator);
         highLighterMethod(getCurrentDriver(), obj);
         return obj.getText();
@@ -31,12 +32,14 @@ public class UtilidadesSelenium {
     }
 
     public static void setAttribute(By locator, String atributo, String info) throws ConfigurationException, InterruptedException, IOException {
+        scrollElement(locator);
         WebElement obj = getCurrentDriver().findElement(locator);
         highLighterMethod(getCurrentDriver(), obj);
         ((JavascriptExecutor) getCurrentDriver()).executeScript("arguments[0].setAttribute(arguments[1], arguments[2]);", obj, atributo, info);
     }
 
     public static String getValue(By locator) throws InterruptedException, ConfigurationException, IOException {
+        scrollElement(locator);
         WebElement obj = getCurrentDriver().findElement(locator);
         highLighterMethod(getCurrentDriver(), obj);
         return obj.getAttribute("value");
@@ -44,6 +47,7 @@ public class UtilidadesSelenium {
 
     public static void cliqueNoElemento(By locator) throws InterruptedException, ConfigurationException, IOException {
         WebElement obj = getCurrentDriver().findElement(locator);
+        scrollElement(locator);
         highLighterMethod(getCurrentDriver(), obj);
         obj.click();
     }
@@ -69,6 +73,7 @@ public class UtilidadesSelenium {
     }
 
     public static void digiteNoElemento(By locator, String info) throws InterruptedException, ConfigurationException, IOException {
+        scrollElement(locator);
         WebElement obj = getCurrentDriver().findElement(locator);
         highLighterMethod(getCurrentDriver(), obj);
         obj.clear();
