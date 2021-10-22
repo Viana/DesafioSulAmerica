@@ -1,7 +1,7 @@
 # DesafioSulAmerica
 
 ## Liguagem Java
-## Maven Framework para gerenciar as dependeências do projeto
+## Maven Framework para gerenciar as dependências do projeto
 ## Gherkin
 
 ## Descompactar Projeto Maven
